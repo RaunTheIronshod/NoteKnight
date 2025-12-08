@@ -94,19 +94,14 @@ LOCAL_DB = {
     'PORT': '5432',
 }
 
-# Production DB (Heroku)
-if DEBUG:
-    # Local machine → DO NOT use SSL
-    DATABASES = {'default': LOCAL_DB}
-else:
-    # Heroku → Use DATABASE_URL
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=config("DATABASE_URL"),
-            conn_max_age=600,
-            ssl_require=True
-        )
-    }
+DATABASES = {
+    'default': dj_database_url.config(
+        default=config('DATABASE_URL', default=os.environ.get('DATABASE_URL')),
+        conn_max_age=600,
+        ssl_require=True
+    )
+}
+
 
 # ---------------------------------------------------------
 # PASSWORD VALIDATION
