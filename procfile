@@ -1,1 +1,1 @@
-web: gunicorn noteknight.wsgi
+web: gunicorn noteknight.wsgi --log-file -
