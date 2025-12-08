@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<p>Welcome, {{ user.username }} | <a href="{% url 'logout' %}">Logout</a></p>
+<h1>{% if form.instance.pk %}Edit{% else %}Create{% endif %} Note</h1>
+
+<form method="post">
+    {% csrf_token %} {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+
+<p><a href="{% url 'note_list' %}">Back to Notes</a></p>
+{% endblock %}
