@@ -1,8 +1,12 @@
+from django.contrib import messages
+from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.views import LoginView, LogoutView
+
 from .models import Note
 
 
@@ -25,7 +29,6 @@ class NoteDetail(LoginRequiredMixin, DetailView):
     login_url = 'login'
 
     def get_queryset(self):
-        # Only allow user to view their own notes
         return Note.objects.filter(user=self.request.user)
 
 
@@ -38,8 +41,8 @@ class NoteCreate(LoginRequiredMixin, CreateView):
     login_url = 'login'
 
     def form_valid(self, form):
-        # Assign the logged-in user before saving
         form.instance.user = self.request.user
+        messages.success(self.request, "Note created successfully!")
         return super().form_valid(form)
 
 
@@ -52,8 +55,11 @@ class NoteUpdate(LoginRequiredMixin, UpdateView):
     login_url = 'login'
 
     def get_queryset(self):
-        # Only allow user to edit their own notes
         return Note.objects.filter(user=self.request.user)
+
+    def form_valid(self, form):
+        messages.success(self.request, "Note updated successfully!")
+        return super().form_valid(form)
 
 
 # DELETE NOTE
@@ -64,8 +70,11 @@ class NoteDelete(LoginRequiredMixin, DeleteView):
     login_url = 'login'
 
     def get_queryset(self):
-        # Only allow user to delete their own notes
         return Note.objects.filter(user=self.request.user)
+
+    def delete(self, request, *args, **kwargs):
+        messages.warning(self.request, "Note deleted.")
+        return super().delete(request, *args, **kwargs)
 
 
 # REGISTER NEW USER
@@ -73,3 +82,25 @@ class RegisterView(CreateView):
     form_class = UserCreationForm
     template_name = 'accounts/register.html'
     success_url = reverse_lazy('login')
+
+    def form_valid(self, form):
+        messages.success(self.request, "Account created successfully! You can now log in.")
+        return super().form_valid(form)
+
+
+# CUSTOM LOGIN WITH MESSAGE
+class CustomLoginView(LoginView):
+    template_name = 'accounts/login.html'
+
+    def form_valid(self, form):
+        messages.success(self.request, "Logged in successfully!")
+        return super().form_valid(form)
+
+
+# CUSTOM LOGOUT VIEW WITH MESSAGE
+class CustomLogoutView(LogoutView):
+    next_page = 'login'
+
+    def dispatch(self, request, *args, **kwargs):
+        messages.info(request, "You have been logged out.")
+        return super().dispatch(request, *args, **kwargs)

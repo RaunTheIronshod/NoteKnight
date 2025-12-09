@@ -98,3 +98,40 @@ form textarea {
 form button {
     margin-top: 20px;
 }
+
+/* Django messages */
+.message-container {
+    margin: 20px auto;
+    max-width: 800px;
+}
+
+.message {
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+/* Success */
+.message-success {
+    background: #d4f7d0;
+    color: #2d7a2f;
+}
+
+/* Error */
+.message-error {
+    background: #f8d7da;
+    color: #842029;
+}
+
+/* Warning */
+.message-warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+/* Info */
+.message-info {
+    background: #cff4fc;
+    color: #055160;
+}
