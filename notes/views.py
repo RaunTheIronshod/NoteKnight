@@ -70,9 +70,7 @@ class NoteDelete(LoginRequiredMixin, DeleteView):
         return Note.objects.filter(user=self.request.user)
 
     def delete(self, request, *args, **kwargs):
-        # Add the success message first
         messages.success(self.request, "Note deleted successfully!")
-        # Then call super to actually delete and redirect
         return super().delete(request, *args, **kwargs)
 
 
