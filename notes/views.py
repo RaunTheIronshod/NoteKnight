@@ -66,12 +66,13 @@ class NoteDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy('note_list')
     login_url = 'login'
 
-    def delete(self, request, *args, **kwargs):
-        messages.success(self.request, "Note deleted!")
-        return super().delete(request, *args, **kwargs)
-
     def get_queryset(self):
         return Note.objects.filter(user=self.request.user)
+
+    def delete(self, request, *args, **kwargs):
+        response = super().delete(request, *args, **kwargs)
+        messages.success(self.request, "Note deleted successfully!")
+        return response
 
 
 # REGISTER NEW USER
@@ -93,7 +94,7 @@ class CustomLoginView(LoginView):
         response = super().form_valid(form)
         messages.success(self.request, "Logged in successfully.")
         return response
-    
+
 
 # LOGOUT VIEW WITH MESSAGE
 class CustomLogoutView(LogoutView):
