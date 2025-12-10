@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from notes import views as note_views
-from .views import admin_dashboard
+from notes.views import admin_dashboard
 
 urlpatterns = [
     # --- Admin ---
