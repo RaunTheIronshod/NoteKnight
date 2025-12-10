@@ -30,6 +30,13 @@
                     {% else %}
                     <a class="me-3" href="{% url 'login' %}">Login</a>
                     <a href="{% url 'register' %}">Register</a>
+                    {% endif %} {% if request.user.is_authenticated and
+                    request.user.userprofile.role == "admin" %}
+                    <a
+                        class="btn btn-warning"
+                        href="{% url 'admin_dashboard' %}"
+                        >Admin Dashboard</a
+                    >
                     {% endif %}
                 </nav>
             </div>

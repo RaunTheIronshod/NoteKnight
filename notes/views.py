@@ -3,9 +3,19 @@ from django.shortcuts import redirect, render
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
-from django.contrib.auth.forms import UserCreationForm
+from .forms import SignUpForm
 from django.contrib.auth.views import LoginView, LogoutView
 from .models import Note
+from django.contrib.auth.decorators import login_required
+from .models import UserProfile
+
+
+@login_required
+def admin_dashboard(request):
+    if request.user.userprofile.role != 'admin':
+        return redirect('note_list')
+
+    return render(request, 'accounts/admin_dashboard.html')
 
 
 # LIST ALL NOTES
@@ -76,11 +86,12 @@ class NoteDelete(LoginRequiredMixin, DeleteView):
 
 # REGISTER NEW USER
 class RegisterView(CreateView):
-    form_class = UserCreationForm
+    form_class = SignUpForm  # <-- USE YOUR FORM
     template_name = 'accounts/register.html'
     success_url = reverse_lazy('login')
 
     def form_valid(self, form):
+        user = form.save()  # creates user AND profile because of our post_save signal
         messages.success(self.request, "Account created! You can now log in.")
         return super().form_valid(form)
 
