@@ -1,4 +1,9 @@
-{% extends "base.html" %} {% load form_tags %} {% block content %}
+<!-- prettier-ignore -->
+{% extends "base.html" %}
+{% load static %}
+{% load form_tags %}
+
+{% block content %}
 
 <div class="mb-3 d-flex justify-content-between align-items-center">
     <p class="mb-0">Welcome, {{ user.username }}</p>
