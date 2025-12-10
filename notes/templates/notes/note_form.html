@@ -20,8 +20,11 @@
     <form method="post" class="needs-validation" novalidate>
         {% csrf_token %} {% for field in form %}
         <div class="mb-3">
-            {{ field.label_tag }} {{ field|add_class:"form-control" }} {% if
-            field.errors %}
+            <!-- prettier-ignore -->
+            {{ field.label_tag }} 
+            {{ field|add_class:"form-control" }} 
+            
+            {% if field.errors %}
             <div class="invalid-feedback d-block">
                 {{ field.errors|striptags }}
             </div>
