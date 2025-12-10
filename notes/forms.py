@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class SignUpForm(UserCreationForm):
-    admin_key = forms.CharField(required=False, help_text="Leave blank unless you're an admin.")
+    admin_key = forms.CharField(required=False, help_text="admin.")
 
     class Meta:
         model = User
