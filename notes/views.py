@@ -8,6 +8,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 from .models import Note
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
+from django.conf import settings
 
 
 @login_required
@@ -86,12 +87,25 @@ class NoteDelete(LoginRequiredMixin, DeleteView):
 
 # REGISTER NEW USER
 class RegisterView(CreateView):
-    form_class = SignUpForm  # <-- USE YOUR FORM
+    form_class = SignUpForm
     template_name = 'accounts/register.html'
     success_url = reverse_lazy('login')
 
     def form_valid(self, form):
-        user = form.save()  # creates user AND profile because of our post_save signal
+        # Save the user object first
+        user = form.save(commit=False)  # don't save yet, so we can modify
+
+        # Check if admin key was entered correctly
+        admin_key = form.cleaned_data.get('admin_key', '').strip()
+        if admin_key == getattr(settings, 'ADMIN_REGISTRATION_KEY', ''):
+            # Give this user admin privileges
+            user.is_staff = True        # can access Django admin
+            user.is_superuser = True    # full permissions
+
+        # Now save the user
+        user.save()
+
+        # The post_save signal will still create the UserProfile
         messages.success(self.request, "Account created! You can now log in.")
         return super().form_valid(form)
 

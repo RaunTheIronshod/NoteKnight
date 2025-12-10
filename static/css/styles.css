@@ -135,3 +135,24 @@ form button {
     background: #cff4fc;
     color: #055160;
 }
+
+/* User role badges */
+.user-badge {
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    font-size: 0.85rem;
+}
+
+.user-badge.admin {
+    background-color: #e74c3c; /* red for admin */
+}
+
+.user-badge.regular {
+    background-color: #3498db; /* blue for regular user */
+}
+
+.user-badge.guest {
+    background-color: #95a5a6; /* grey for not logged in */
+}
