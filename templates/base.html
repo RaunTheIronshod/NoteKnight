@@ -21,7 +21,7 @@
         <header class="mb-4">
             <div class="d-flex justify-content-between align-items-center">
                 <h1 class="mb-0">NoteKnight</h1>
-
+                <!-- prettier-ignore -->
                 <nav>
                     <a class="me-3" href="{% url 'note_list' %}">Notes</a>
 
@@ -30,8 +30,8 @@
                     {% else %}
                     <a class="me-3" href="{% url 'login' %}">Login</a>
                     <a href="{% url 'register' %}">Register</a>
-                    {% endif %} {% if request.user.is_authenticated and
-                    request.user.userprofile.role == "admin" %}
+                    {% endif %} 
+                    {% if request.user.is_authenticated and request.user.userprofile.role == "admin" %}
                     <a
                         class="btn btn-warning"
                         href="{% url 'admin_dashboard' %}"
