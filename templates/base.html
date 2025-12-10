@@ -23,6 +23,20 @@
                 <h1 class="mb-0">NoteKnight</h1>
                 <!-- prettier-ignore -->
                 <nav>
+                    <div class="user-indicator">
+                        {% if user.is_authenticated %}
+                        <span class="user-badge {% if user.is_superuser %}admin{% else %}regular{% endif %}">
+                        {{ user.username }} 
+                        {% if user.is_superuser %}
+                            (Admin)
+                        {% else %}
+                            (User)
+                        {% endif %}
+                        </span>
+                        {% else %}
+                        <span class="user-badge guest">Guest</span>
+                        {% endif %}
+                    </div>
                     <a class="me-3" href="{% url 'note_list' %}">Notes</a>
 
                     {% if user.is_authenticated %}
