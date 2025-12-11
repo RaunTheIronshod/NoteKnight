@@ -1,11 +1,12 @@
-{% extends "base.html" %} {% load static %} {% load form_tags %} 
+{% extends "base.html" %}
+{% load static %}
+{% load form_tags %}
+
 {% block content %}
 <section aria-labelledby="note-form-heading">
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <p class="mb-0">Welcome, {{ user.username }}</p>
-        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm"
-            >Logout</a
-        >
+        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm">Logout</a>
     </div>
 
     <main class="mt-4">
@@ -14,13 +15,23 @@
         </h2>
 
         <form method="post" class="needs-validation" novalidate>
-            {% csrf_token %} {% for field in form %}
+            {% csrf_token %}
+
+            {% for field in form %}
             <div class="mb-3">
-                {{ field.label_tag(attrs={"class": "form-label"}) }} {{ field|add_class:"form-control" }} {% if field.help_text %}
-                <small class="form-text text-muted"
-                    >{{ field.help_text }}</small
-                >
-                {% endif %} {% if field.errors %}
+                <!-- Label with Bootstrap styling -->
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+
+                <!-- Field widget with Bootstrap class -->
+                {{ field|add_class:"form-control" }}
+
+                <!-- Optional help text -->
+                {% if field.help_text %}
+                <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+
+                <!-- Field errors -->
+                {% if field.errors %}
                 <div class="invalid-feedback d-block">
                     {{ field.errors|striptags }}
                 </div>
@@ -28,11 +39,10 @@
             </div>
             {% endfor %}
 
+            <!-- Form actions -->
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-primary">Save</button>
-                <a href="{% url 'note_list' %}" class="btn btn-link"
-                    >Back to Notes</a
-                >
+                <a href="{% url 'note_list' %}" class="btn btn-link">Back to Notes</a>
             </div>
         </form>
     </main>
