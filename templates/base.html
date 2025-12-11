@@ -27,12 +27,14 @@
                 <!-- Navigation -->
                 <nav aria-label="Main Navigation">
                     <ul class="nav flex-column flex-md-row align-items-center">
+                        <!-- Notes Link -->
                         <li class="nav-item me-md-3">
                             <a class="nav-link" href="{% url 'note_list' %}"
                                 >Notes</a
                             >
                         </li>
 
+                        <!-- Authentication Links -->
                         {% if user.is_authenticated %}
                         <li class="nav-item me-md-3">
                             <a class="nav-link" href="{% url 'logout' %}"
@@ -50,7 +52,11 @@
                                 >Register</a
                             >
                         </li>
-                        {% endif %} {% if request.user.is_authenticated and request.user.userprofile.role == "admin" %}
+                        {% endif %}
+
+                        <!-- Admin Dashboard -->
+                        {% if user.is_authenticated and
+                        request.user.userprofile.role == "admin" %}
                         <li class="nav-item">
                             <a
                                 class="btn btn-warning nav-link"
