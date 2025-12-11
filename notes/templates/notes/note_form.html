@@ -1,5 +1,5 @@
-{% extends "base.html" %} {% load static %} {% load form_tags %} {% block
-content %}
+{% extends "base.html" %} {% load static %} {% load form_tags %} 
+{% block content %}
 <section aria-labelledby="note-form-heading">
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <p class="mb-0">Welcome, {{ user.username }}</p>
@@ -16,8 +16,7 @@ content %}
         <form method="post" class="needs-validation" novalidate>
             {% csrf_token %} {% for field in form %}
             <div class="mb-3">
-                {{ field.label_tag(attrs={"class": "form-label"}) }} {{
-                field|add_class:"form-control" }} {% if field.help_text %}
+                {{ field.label_tag(attrs={"class": "form-label"}) }} {{ field|add_class:"form-control" }} {% if field.help_text %}
                 <small class="form-text text-muted"
                     >{{ field.help_text }}</small
                 >
