@@ -55,8 +55,7 @@
                         {% endif %}
 
                         <!-- Admin Dashboard -->
-                        {% if user.is_authenticated and
-                        request.user.userprofile.role == "admin" %}
+                        {% if user.is_authenticated and request.user.userprofile.role == "admin" %}
                         <li class="nav-item">
                             <a
                                 class="btn btn-warning nav-link"
@@ -72,8 +71,7 @@
                             <span
                                 class="user-badge {% if user.is_superuser %}admin{% else %}regular{% endif %}"
                             >
-                                {{ user.username }} {% if user.is_superuser
-                                %}(Admin){% else %}(User){% endif %}
+                                {{ user.username }} {% if user.is_superuser %}(Admin){% else %}(User){% endif %}
                             </span>
                             {% else %}
                             <span class="user-badge guest">Guest</span>
