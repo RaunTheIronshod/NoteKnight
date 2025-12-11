@@ -50,8 +50,7 @@
                                 >Register</a
                             >
                         </li>
-                        {% endif %} {% if request.user.is_authenticated and
-                        request.user.userprofile.role == "admin" %}
+                        {% endif %} {% if request.user.is_authenticated and request.user.userprofile.role == "admin" %}
                         <li class="nav-item">
                             <a
                                 class="btn btn-warning nav-link"
