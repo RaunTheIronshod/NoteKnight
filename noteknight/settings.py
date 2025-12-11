@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import dj_database_url
 from decouple import config
+import sys
 
 # ---------------------------------------------------------
 # CORE PATHS
@@ -185,4 +186,10 @@ LOGGING = {
 if 'DATABASE_URL' in os.environ:
     DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
-
+if 'test' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': ':memory:',  # in-memory database for fast tests
+        }
+    }
