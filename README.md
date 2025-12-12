@@ -27,6 +27,7 @@ The user is able, upon registration, to become an admin with a keyword used in t
 
 
 Features
+----
 Existing features include:
 
 User registration
@@ -41,8 +42,10 @@ Form validation
 Security features, including Django’s built-in authentication, safe redirect patterns and server-side model validation
 
 Agile
+----
 
 Libraries and Frameworks
+----
 Django 4.2.1 – main web framework
 Gunicorn – production WSGI server
 Whitenoise – static file management on Heroku
@@ -53,21 +56,23 @@ Django Forms – rendering & validation
 Python 3.12 – core language
 
 AI Implementation
+----
 AI was mainly used as a basic framework builder and aided in syntax correction, it also helped with debugging somewhat during the various Heroku deployments and project deployment during our pipeline setup
 
 Deployment
+----
 The app is deployed to heroku following the various coding and project setup practices required for deployment on the platform, such as the use of a Procfile, whitenoise static collection, config vars with key-value pairs and Heroku’s PostgreSQL addon
-
-Our deployment stages 
 
 
 Testing & Validation
+----
 Testing covered the basic manual testing between the IDE environment through to the deployment platform on a regular basis with each feature completion to enable end of run deployment without any hiccups, this methodology helped with better understanding of the pipelines process and requirements during the project lifetime
 
 Automated testing through python proved somewhat tricky with the Heroku setup projecting failures on manually tested and passed features
 
 
 Future Features and Changes
+----
 This app was developed for personal use for my own varied projects, its continuation will include mind maps, image handling and category handling for different projects through data id’s.
 
 I plan to increase protection through the use of rate limiting and Django’s CSP, data encryption and logging system, as this app will be acting as my personal projects board for the future
@@ -75,12 +80,14 @@ I plan to increase protection through the use of rate limiting and Django’s CS
 
 
 References
+----
 Django’s Documentation
 Code Institutes LMS
 W3C Validators
 Heroku Deployment Documentation
 Bootstrap Documentation
 StackOverflow
+
 
 
 
