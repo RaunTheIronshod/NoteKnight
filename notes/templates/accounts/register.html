@@ -1,22 +1,20 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="d-flex justify-content-center align-items-center min-vh-100" aria-labelledby="registerHeading">
+<main role="main" class="d-flex justify-content-center align-items-center min-vh-100" aria-labelledby="registerHeading">
     <div class="card p-4 shadow-sm w-100" style="max-width: 400px;">
         <h1 id="registerHeading" class="mb-4 text-center">Create an Account</h1>
 
         <form method="post" novalidate role="form" aria-describedby="formInstructions">
             {% csrf_token %}
 
-            <div id="formInstructions" class="visually-hidden">
+            <p id="formInstructions" class="visually-hidden">
                 Please fill out the form below to create an account.
-            </div>
+            </p>
 
             {% for field in form %}
             <div class="mb-3" aria-live="polite">
-                <label for="{{ field.id_for_label }}" class="form-label">
-                    {{ field.label }}
-                </label>
+                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
 
                 <input type="{{ field.field.widget.input_type }}"
                        name="{{ field.html_name }}"
@@ -24,9 +22,9 @@
                        class="form-control {% if field.errors %}is-invalid{% endif %}"
                        value="{{ field.value|default_if_none:'' }}"
                        {% if forloop.first %}autofocus{% endif %}
-                       {% if field.help_text %}aria-describedby="{{ field.id_for_label }}_help"{% else %}aria-describedby="{{ field.id_for_label }}_help"{% endif %}>
+                       aria-describedby="{{ field.id_for_label }}_help">
 
-                <!-- Render help text div even if empty -->
+                <!-- Help text (always rendered for aria-describedby) -->
                 <div id="{{ field.id_for_label }}_help" class="form-text">
                     {% if field.help_text %}
                         {{ field.help_text }}
@@ -48,5 +46,5 @@
             Already have an account? <a href="{% url 'login' %}">Login</a>
         </p>
     </div>
-</section>
+</main>
 {% endblock %}
