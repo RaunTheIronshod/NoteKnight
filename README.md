@@ -61,12 +61,19 @@ Agile
 Libraries and Frameworks
 ----
 Django 4.2.1 – main web framework
+
 Gunicorn – production WSGI server
+
 Whitenoise – static file management on Heroku
+
 SQLite (dev) → PostgreSQL (Heroku)
+
 Bootstrap / CSS – styling
+
 Heroku CLI – deployment
+
 Django Forms – rendering & validation
+
 Python 3.12 – core language
 
 AI Implementation
@@ -101,6 +108,7 @@ W3C Validators
 Heroku Deployment Documentation
 Bootstrap Documentation
 StackOverflow
+
 
 
 
