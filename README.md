@@ -27,6 +27,7 @@ The ui is responsive to user actions and across different devices following the 
 
 The user is able, upon registration, to become an admin with a keyword used in the sign up form. This gives them access to django’s in built dashboard with access to user information and the ability to delete users
 
+WIREFRAMES
 login/register
 ![Noteknight Wireframe](https://github.com/user-attachments/assets/44d6c301-b595-46b2-8e28-fe6ddf7735ea)
 main note list
@@ -137,3 +138,4 @@ There is no delete responsiveness as the message kept getting wiped on a redirec
 There is also some legacy code to o with admin creation that breaks the app when I try to delete it. I am aware it is there and no longer used
 
 Also there is no limit cap to the notes, not visually breaking just a noteable oversight
+
