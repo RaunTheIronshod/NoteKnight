@@ -23,6 +23,11 @@ Visually clear and consistent styling across templates help to make the app simp
 The ui is responsive to user actions and across different devices following the mobile first methodology of development. 
 
 The user is able, upon registration, to become an admin with a keyword used in the sign up form. This gives them access to django’s in built dashboard with access to user information and the ability to delete users
+![Noteknight Wireframe](https://github.com/user-attachments/assets/44d6c301-b595-46b2-8e28-fe6ddf7735ea)
+![Noteknight Wireframe 2](https://github.com/user-attachments/assets/16fc6297-80a1-490c-9418-4207df21aee5)
+![Noteknight Wireframe 3](https://github.com/user-attachments/assets/8bc360d1-6293-4fee-b44e-785c88b90880)
+
+
 
 
 
@@ -87,6 +92,7 @@ W3C Validators
 Heroku Deployment Documentation
 Bootstrap Documentation
 StackOverflow
+
 
 
 
