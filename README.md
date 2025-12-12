@@ -109,11 +109,17 @@ I plan to increase protection through the use of rate limiting and Django’s CS
 References
 ----
 Django’s Documentation
+
 Code Institutes LMS
+
 W3C Validators
+
 Heroku Deployment Documentation
+
 Bootstrap Documentation
+
 StackOverflow
+
 
 
 
