@@ -12,9 +12,10 @@
     </div>
 
     {% if notes %}
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+    <!-- Use notes-grid class for CSS Grid -->
+    <div class="notes-grid">
         {% for note in notes %}
-        <article class="col">
+        <article>
             <div class="card h-100">
                 <div class="card-body">
                     <h3 class="card-title">{{ note.title }}</h3>
