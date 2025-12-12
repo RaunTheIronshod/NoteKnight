@@ -36,14 +36,23 @@ Features
 Existing features include:
 
 User registration
+
 Secure login/logout
+
 Fully functional note creation and manipulation
+
 Per-user data isolation
+
 Auto generated timestamps
+
 Mobile friendly browser layout
+
 User roles via a Profile model
+
 CSRF protection
+
 Form validation
+
 Security features, including Django’s built-in authentication, safe redirect patterns and server-side model validation
 
 Agile
@@ -92,6 +101,7 @@ W3C Validators
 Heroku Deployment Documentation
 Bootstrap Documentation
 StackOverflow
+
 
 
 
