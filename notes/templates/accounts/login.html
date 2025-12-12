@@ -17,13 +17,14 @@
                    class="form-control {% if field.errors %}is-invalid{% endif %}"
                    value="{{ field.value|default_if_none:'' }}"
                    {% if forloop.first %}autofocus{% endif %}
-                   aria-describedby="{{ field.id_for_label }}_help">
+                   {% if field.help_text %}aria-describedby="{{ field.id_for_label }}_help"{% endif %}>
 
-            {% if field.help_text %}
+            <!-- Render help text div even if empty for consistent aria-describedby -->
             <div id="{{ field.id_for_label }}_help" class="form-text">
-                {{ field.help_text }}
+                {% if field.help_text %}
+                    {{ field.help_text }}
+                {% endif %}
             </div>
-            {% endif %}
             
             {% for error in field.errors %}
             <div class="invalid-feedback">
