@@ -58,6 +58,7 @@ Security features, including Django’s built-in authentication, safe redirect p
 Agile
 ----
 https://github.com/users/RaunTheIronshod/projects/10
+
 Github projects was use for our agile methodology. We used user stories with the as a, I can, so that format mainly defining our CRUD functionality for note handling and user registration
 
 Libraries and Frameworks
@@ -113,6 +114,7 @@ W3C Validators
 Heroku Deployment Documentation
 Bootstrap Documentation
 StackOverflow
+
 
 
 
