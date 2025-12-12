@@ -1,15 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="d-flex justify-content-center align-items-center min-vh-100">
+<section class="d-flex justify-content-center align-items-center min-vh-100" aria-labelledby="registerHeading">
     <div class="card p-4 shadow-sm w-100" style="max-width: 400px;">
-        <h1 class="mb-4 text-center">Create an Account</h1>
+        <h1 id="registerHeading" class="mb-4 text-center">Create an Account</h1>
 
-        <form method="post" novalidate role="form">
+        <form method="post" novalidate role="form" aria-describedby="formInstructions">
             {% csrf_token %}
 
+            <div id="formInstructions" class="visually-hidden">
+                Please fill out the form below to create an account.
+            </div>
+
             {% for field in form %}
-            <div class="mb-3">
+            <div class="mb-3" aria-live="polite">
                 <label for="{{ field.id_for_label }}" class="form-label">
                     {{ field.label }}
                 </label>
@@ -20,16 +24,17 @@
                        class="form-control {% if field.errors %}is-invalid{% endif %}"
                        value="{{ field.value|default_if_none:'' }}"
                        {% if forloop.first %}autofocus{% endif %}
-                       aria-describedby="{{ field.id_for_label }}_help">
+                       {% if field.help_text %}aria-describedby="{{ field.id_for_label }}_help"{% else %}aria-describedby="{{ field.id_for_label }}_help"{% endif %}>
 
-                {% if field.help_text %}
+                <!-- Render help text div even if empty -->
                 <div id="{{ field.id_for_label }}_help" class="form-text">
-                    {{ field.help_text }}
+                    {% if field.help_text %}
+                        {{ field.help_text }}
+                    {% endif %}
                 </div>
-                {% endif %}
 
                 {% for error in field.errors %}
-                <div class="invalid-feedback">
+                <div class="invalid-feedback" role="alert">
                     {{ error }}
                 </div>
                 {% endfor %}

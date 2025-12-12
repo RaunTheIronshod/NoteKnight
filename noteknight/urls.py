@@ -18,4 +18,3 @@ urlpatterns = [
     path('', include('notes.urls')),          # main homepage = notes list
     path('note/', include('notes.urls')),     # optional secondary path
 ]
-

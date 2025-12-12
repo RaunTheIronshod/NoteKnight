@@ -1,10 +1,12 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+
+{% block content %}
 <section aria-labelledby="note-detail-heading">
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <p class="mb-0">Welcome, {{ user.username }}</p>
-        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm"
-            >Logout</a
-        >
+        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm" aria-label="Logout from your account">
+            Logout
+        </a>
     </div>
 
     <article class="card mb-4">
@@ -14,21 +16,14 @@
             </h2>
             <p class="card-text">{{ note.content }}</p>
             <footer class="text-muted mb-3">
-                Created: {{ note.created_at }} | Updated: {{ note.updated_at }}
+                Created: <time datetime="{{ note.created_at|date:'c' }}">{{ note.created_at }}</time> | 
+                Updated: <time datetime="{{ note.updated_at|date:'c' }}">{{ note.updated_at }}</time>
             </footer>
 
             <nav aria-label="Note actions" class="d-flex gap-2 flex-wrap">
-                <a
-                    href="{% url 'note_update' note.pk %}"
-                    class="btn btn-secondary"
-                    >Edit</a
-                >
-                <a href="{% url 'note_delete' note.pk %}" class="btn btn-danger"
-                    >Delete</a
-                >
-                <a href="{% url 'note_list' %}" class="btn btn-link"
-                    >Back to Notes</a
-                >
+                <a href="{% url 'note_update' note.pk %}" class="btn btn-secondary">Edit</a>
+                <a href="{% url 'note_delete' note.pk %}" class="btn btn-danger">Delete</a>
+                <a href="{% url 'note_list' %}" class="btn btn-link">Back to Notes</a>
             </nav>
         </div>
     </article>

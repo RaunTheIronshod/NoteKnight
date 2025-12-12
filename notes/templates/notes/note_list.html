@@ -1,47 +1,30 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 <section aria-labelledby="notes-heading">
     <div class="mb-3 d-flex justify-content-between align-items-center">
         <p class="mb-0">Welcome, {{ user.username }}</p>
-        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm"
-            >Logout</a
-        >
+        <a href="{% url 'logout' %}" class="btn btn-outline-secondary btn-sm" aria-label="Logout from your account">Logout</a>
     </div>
 
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 id="notes-heading">Your Notes</h2>
-        <a href="{% url 'note_create' %}" class="btn btn-primary"
-            >Create Note</a
-        >
+        <a href="{% url 'note_create' %}" class="btn btn-primary" aria-label="Create a new note">Create Note</a>
     </div>
 
     {% if notes %}
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for note in notes %}
-        <article class="col">
+        <article class="col" aria-labelledby="note-title-{{ note.pk }}">
             <div class="card h-100">
                 <div class="card-body">
-                    <h3 class="card-title">{{ note.title }}</h3>
+                    <h3 id="note-title-{{ note.pk }}" class="card-title">{{ note.title }}</h3>
                     <p class="card-text text-truncate">{{ note.content }}</p>
                 </div>
-                <div
-                    class="card-footer d-flex justify-content-between flex-wrap"
-                >
-                    <a
-                        href="{% url 'note_detail' note.pk %}"
-                        class="btn btn-outline-primary btn-sm"
-                        >View</a
-                    >
+                <div class="card-footer d-flex justify-content-between flex-wrap" role="group" aria-label="Note actions for {{ note.title }}">
+                    <a href="{% url 'note_detail' note.pk %}" class="btn btn-outline-primary btn-sm">View</a>
                     <div class="d-flex gap-1">
-                        <a
-                            href="{% url 'note_update' note.pk %}"
-                            class="btn btn-secondary btn-sm"
-                            >Edit</a
-                        >
-                        <a
-                            href="{% url 'note_delete' note.pk %}"
-                            class="btn btn-danger btn-sm"
-                            >Delete</a
-                        >
+                        <a href="{% url 'note_update' note.pk %}" class="btn btn-secondary btn-sm">Edit</a>
+                        <a href="{% url 'note_delete' note.pk %}" class="btn btn-danger btn-sm">Delete</a>
                     </div>
                 </div>
             </div>

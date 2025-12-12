@@ -1,8 +1,12 @@
-{% extends "base.html" %} {% block content %}
-<section aria-labelledby="delete-note-heading">
+{% extends "base.html" %}
+
+{% block content %}
+<section aria-labelledby="delete-note-heading" role="alertdialog" aria-describedby="delete-note-description">
     <h2 id="delete-note-heading">Delete Note</h2>
 
-    <p>Are you sure you want to delete <strong>{{ object.title }}</strong>?</p>
+    <p id="delete-note-description">
+        Are you sure you want to delete <strong>{{ object.title }}</strong>? This action cannot be undone.
+    </p>
 
     <form method="post" class="d-flex gap-2">
         {% csrf_token %}

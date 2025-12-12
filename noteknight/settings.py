@@ -174,14 +174,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ---------------------------------------------------------
 LOGGING = {
     'version': 1,  # Required: specifies the logging schema version (always 1 for Django)
-    
+
     # HANDLERS: define where log messages go
     'handlers': {
         'console': {  # This handler sends log messages to the console (stdout)
             'class': 'logging.StreamHandler',  # Uses Python's standard StreamHandler
         },
     },
-    
+
     # ROOT LOGGER: the default logger for your project
     'root': {
         'handlers': ['console'],  # Sends all root logger messages to the console
