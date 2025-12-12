@@ -1,4 +1,4 @@
-/* ===== Global Reset ===== */
+/* ===== Global Reset & Base Styles ===== */
 * {
     margin: 0;
     padding: 0;
@@ -13,14 +13,12 @@ body {
     min-height: 100vh;
 }
 
-/* ===== Container ===== */
 main.container {
     max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
 
-/* ===== Header ===== */
 header {
     background: #2d3436;
     color: #fff;
@@ -67,19 +65,12 @@ header nav a:focus-visible {
     color: #fff;
 }
 
-.user-badge.admin {
-    background-color: #e74c3c;
-}
-.user-badge.regular {
-    background-color: #3498db;
-}
-.user-badge.guest {
-    background-color: #95a5a6;
-}
+.user-badge.admin { background-color: #e74c3c; }
+.user-badge.regular { background-color: #3498db; }
+.user-badge.guest { background-color: #95a5a6; }
 
 /* ===== Buttons ===== */
-button,
-a.button {
+button, a.button {
     display: inline-block;
     background: #0984e3;
     color: #fff;
@@ -92,51 +83,28 @@ a.button {
     transition: background 0.3s;
 }
 
-button:hover,
-a.button:hover {
-    background: #74b9ff;
-}
-
-button:focus,
-a.button:focus {
-    outline: 2px dashed #0984e3;
-    outline-offset: 2px;
-}
+button:hover, a.button:hover { background: #74b9ff; }
+button:focus, a.button:focus { outline: 2px dashed #0984e3; outline-offset: 2px; }
 
 /* ===== Forms ===== */
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-form input,
-form textarea,
-form select {
+form label { display: block; margin-bottom: 5px; font-weight: 600; }
+form input, form textarea, form select {
     width: 100%;
     padding: 10px;
     border-radius: 4px;
     border: 1px solid #ccc;
     font-size: 1rem;
 }
-
-form input:focus,
-form textarea:focus,
-form select:focus {
+form input:focus, form textarea:focus, form select:focus {
     border-color: #0984e3;
     outline: 2px solid #0984e3;
 }
-
-.invalid-feedback {
-    color: #e74c3c;
-    font-size: 0.875rem;
-    margin-top: 4px;
-}
+.invalid-feedback { color: #e74c3c; font-size: 0.875rem; margin-top: 4px; }
 
 /* ===== Notes / Cards ===== */
 .card {
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
     background-color: #fff;
     padding: 15px;
     display: flex;
@@ -145,15 +113,8 @@ form select:focus {
     height: 100%;
 }
 
-.card-title {
-    font-size: 1.2rem;
-    font-weight: 600;
-}
-
-.card-text {
-    margin-top: 8px;
-    overflow-wrap: break-word;
-}
+.card-title { font-size: 1.2rem; font-weight: 600; }
+.card-text { margin-top: 8px; overflow-wrap: break-word; }
 
 /* ===== Notes Grid Layout ===== */
 .notes-grid {
@@ -162,65 +123,17 @@ form select:focus {
     gap: 20px;
 }
 
-/* Tablet: 2 per row */
-@media (max-width: 900px) {
-    .notes-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Mobile: 1 per row */
-@media (max-width: 576px) {
-    .notes-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ===== Alerts / Messages ===== */
+/* ===== Alerts ===== */
 .alert {
     padding: 12px 16px;
     border-radius: 6px;
     margin-bottom: 15px;
     font-weight: 600;
 }
-
-.alert-success {
-    background-color: #d4f7d0;
-    color: #2d7a2f;
-}
-.alert-error {
-    background-color: #f8d7da;
-    color: #842029;
-}
-.alert-warning {
-    background-color: #fff3cd;
-    color: #856404;
-}
-.alert-info {
-    background-color: #cff4fc;
-    color: #055160;
-}
-
-/* ===== Responsive Header & Buttons ===== */
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    main.container {
-        padding: 15px;
-    }
-
-    .card {
-        padding: 12px;
-    }
-
-    button,
-    a.button {
-        width: 100%;
-    }
-}
+.alert-success { background-color: #d4f7d0; color: #2d7a2f; }
+.alert-error { background-color: #f8d7da; color: #842029; }
+.alert-warning { background-color: #fff3cd; color: #856404; }
+.alert-info { background-color: #cff4fc; color: #055160; }
 
 /* ===== Forms & Auth Pages ===== */
 .auth-card {
@@ -229,35 +142,15 @@ form select:focus {
     background: #fff;
     padding: 25px;
     border-radius: 6px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
-
-.auth-card h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-}
-
-.auth-card p {
-    text-align: center;
-    margin-top: 15px;
-}
-
-.auth-card a {
-    text-decoration: none;
-    color: #0984e3;
-}
-
-.auth-card a:hover,
-.auth-card a:focus-visible {
-    color: #74b9ff;
-    outline: none;
-}
+.auth-card h1 { text-align: center; margin-bottom: 20px; font-size: 1.5rem; }
+.auth-card p { text-align: center; margin-top: 15px; }
+.auth-card a { text-decoration: none; color: #0984e3; }
+.auth-card a:hover, .auth-card a:focus-visible { color: #74b9ff; outline: none; }
 
 /* ===== Utilities ===== */
-.text-center {
-    text-align: center;
-}
+.text-center { text-align: center; }
 .mb-0 { margin-bottom: 0; }
 .mb-3 { margin-bottom: 1rem; }
 .mb-4 { margin-bottom: 1.5rem; }
@@ -269,3 +162,17 @@ form select:focus {
 .d-flex { display: flex; }
 .justify-content-between { justify-content: space-between; }
 .align-items-center { align-items: center; }
+
+/* ===== RESPONSIVENESS ===== */
+
+/* Header nav & buttons */
+@media (max-width: 768px) {
+    header nav { flex-direction: column; align-items: flex-start; }
+    main.container { padding: 15px; }
+    .card { padding: 12px; }
+    button, a.button { width: 100%; }
+}
+
+/* Notes grid responsive */
+@media (max-width: 900px) { .notes-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 576px) { .notes-grid { grid-template-columns: 1fr; } }
