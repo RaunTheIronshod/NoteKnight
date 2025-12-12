@@ -8,6 +8,9 @@ Noteknight is a full Django powered application designed for users to manage the
 
 The system has been kept simplistic and minimal to help the projects intended purpose in learning full project management and cloud based deployment handling with
 
+![Main page](https://github.com/user-attachments/assets/df268d8b-8f7d-4114-8957-0aeaf0898403)
+
+
 Planning
 ----
 The core planning goals of the project where a working authentication system, functional CRUD implementation, clean integration between models and templates, a reliable deployment pipeline and an accessibility focused UX/UI
@@ -126,6 +129,7 @@ Heroku Deployment Documentation
 Bootstrap Documentation
 
 StackOverflow
+
 
 
 
