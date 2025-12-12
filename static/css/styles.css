@@ -216,11 +216,13 @@ form select:focus {
 }
 
 /* Mobile: 1 per row */
-@media (max-width: 600px) {
-    .notes-grid {
-        grid-template-columns: 1fr;
+@media (max-width: 576px) {
+    .row > .col {
+        flex: 0 0 100%;
+        max-width: 100%;
     }
 }
+
 
 
 /* ===== Forms & Auth Pages ===== */
