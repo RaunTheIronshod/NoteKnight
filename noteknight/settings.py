@@ -14,17 +14,29 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ---------------------------------------------------------
 SECRET_KEY = config('SECRET_KEY')
 
-ADMIN_REGISTRATION_KEY = "iamadminhearmerawrxd"
+ADMIN_REGISTRATION_KEY = config("ADMIN_REGISTRATION_KEY")
 
 DEBUG = config('DEBUG', default=False, cast=bool)
-
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "0.0.0.0",
-    "https://noteknight-1e2cee381e80.herokuapp.com/",
+    "noteknight-1e2cee381e80.herokuapp.com",
+    "noteknight.herokuapp.com",
+    ".herokuapp.com",
 ]
+
+# ---------------------------------------------------------
+# CSRF TRUSTED ORIGINS
+# ---------------------------------------------------------
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://noteknight-1e2cee381e80.herokuapp.com",
+    "https://noteknight.herokuapp.com",
+    "https://*.herokuapp.com",
+]
+
 
 # ---------------------------------------------------------
 # APPLICATIONS
@@ -141,7 +153,6 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # WhiteNoise for serving static files in production
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
@@ -157,12 +168,6 @@ LOGOUT_REDIRECT_URL = '/login/'
 # ---------------------------------------------------------
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ---------------------------------------------------------
-# CSRF TRUSTED ORIGINS
-# ---------------------------------------------------------
-CSRF_TRUSTED_ORIGINS = [
-    'https://*.herokuapp.com',
-]
 
 # ---------------------------------------------------------
 # LOGGING CONFIGURATION
