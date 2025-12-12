@@ -201,6 +201,28 @@ form select:focus {
     }
 }
 
+/* ===== Notes Grid Layout ===== */
+.notes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Tablet: 2 per row */
+@media (max-width: 900px) {
+    .notes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 600px) {
+    .notes-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
 /* ===== Forms & Auth Pages ===== */
 .auth-card {
     max-width: 400px;
