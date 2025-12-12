@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'widget_tweaks',
 
-    # Your apps
+    # my apps
     'notes',
 ]
 
@@ -173,7 +173,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # LOGGING CONFIGURATION
 # ---------------------------------------------------------
 LOGGING = {
-    'version': 1,  # Required: specifies the logging schema version (always 1 for Django)
+    'version': 1,  # Required: specifies the logging schema version
 
     # HANDLERS: define where log messages go
     'handlers': {
@@ -182,11 +182,11 @@ LOGGING = {
         },
     },
 
-    # ROOT LOGGER: the default logger for your project
+    # ROOT LOGGER: the default logger for the project
     'root': {
-        'handlers': ['console'],  # Sends all root logger messages to the console
-        'level': 'INFO',          # Minimum log level to handle (DEBUG < INFO < WARNING < ERROR < CRITICAL)
-                                  # INFO: general runtime information about your app
+        'handlers': ['console'],  # Sends all root logger messages to console
+        'level': 'INFO',          # Minimum log level to handle
+                                  
     },
 }
 
