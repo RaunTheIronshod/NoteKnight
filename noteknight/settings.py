@@ -16,13 +16,14 @@ SECRET_KEY = config('SECRET_KEY')
 
 ADMIN_REGISTRATION_KEY = "iamadminhearmerawrxd"
 
-DEBUG = config('DEBUG', default=True, cast=bool)
+DEBUG = config('DEBUG', default=False, cast=bool)
+
 
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "0.0.0.0",
-    ".herokuapp.com",
+    "https://noteknight-1e2cee381e80.herokuapp.com/",
 ]
 
 # ---------------------------------------------------------
