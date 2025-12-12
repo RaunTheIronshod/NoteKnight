@@ -57,6 +57,8 @@ Security features, including Django’s built-in authentication, safe redirect p
 
 Agile
 ----
+https://github.com/users/RaunTheIronshod/projects/10
+Github projects was use for our agile methodology. We used user stories with the as a, I can, so that format mainly defining our CRUD functionality for note handling and user registration
 
 Libraries and Frameworks
 ----
@@ -92,6 +94,9 @@ Testing covered the basic manual testing between the IDE environment through to 
 Automated testing through python proved somewhat tricky with the Heroku setup projecting failures on manually tested and passed features
 
 
+https://jigsaw.w3.org - all CSS passed, no errors
+https://validator.w3.org/ - all HTML passed, no errors
+
 Future Features and Changes
 ----
 This app was developed for personal use for my own varied projects, its continuation will include mind maps, image handling and category handling for different projects through data id’s.
@@ -108,6 +113,7 @@ W3C Validators
 Heroku Deployment Documentation
 Bootstrap Documentation
 StackOverflow
+
 
 
 
