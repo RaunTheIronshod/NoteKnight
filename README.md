@@ -15,7 +15,7 @@ Planning
 ----
 The core planning goals of the project where a working authentication system, functional CRUD implementation, clean integration between models and templates, a reliable deployment pipeline and an accessibility focused UX/UI
 
-A structured agile methodology was used throughout the project to keep it on track and help with any timekeeping issues. Admittedly this project had some deployment bumps in its early stages and the entirety of the work was done in the last week, the final project being the third attempt to produce as the first two’s codebases ended up far too needlessly complex for the state of the project/ With that the projects todo board is somewhat lip-service to its required function
+A structured agile methodology was used throughout the project to keep it on track and help with any timekeeping issues. Admittedly this project had some deployment bumps in its early stages and the entirety of the work was done in the last week, the final project being the third attempt to produce as the first two’s codebases ended up far too needlessly complex for the state of the project. With that the projects todo board is somewhat lip-service to its required function
 
 UX/UI Design
 ----
@@ -130,15 +130,10 @@ Bootstrap Documentation
 
 StackOverflow
 
+Known issues I don't have time to fix before submission
+----
+There is no delete responsiveness as the message kept getting wiped on a redirect. 
 
+There is also some legacy code to o with admin creation that breaks the app when I try to delete it. I am aware it is there and no longer used
 
-
-
-
-
-
-
-
-
-
-
+Also there is no limit cap to the notes, not visually breaking just a noteable oversight
