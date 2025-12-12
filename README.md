@@ -23,11 +23,13 @@ Visually clear and consistent styling across templates help to make the app simp
 The ui is responsive to user actions and across different devices following the mobile first methodology of development. 
 
 The user is able, upon registration, to become an admin with a keyword used in the sign up form. This gives them access to django’s in built dashboard with access to user information and the ability to delete users
+
+login/register
 ![Noteknight Wireframe](https://github.com/user-attachments/assets/44d6c301-b595-46b2-8e28-fe6ddf7735ea)
-![Noteknight Wireframe 2](https://github.com/user-attachments/assets/16fc6297-80a1-490c-9418-4207df21aee5)
+main note list
 ![Noteknight Wireframe 3](https://github.com/user-attachments/assets/ae2a3f66-b591-409c-a8ae-88aee67dcb14)
-
-
+old note list
+![Noteknight Wireframe 2](https://github.com/user-attachments/assets/16fc6297-80a1-490c-9418-4207df21aee5)
 
 
 
@@ -92,11 +94,16 @@ Testing & Validation
 ----
 Testing covered the basic manual testing between the IDE environment through to the deployment platform on a regular basis with each feature completion to enable end of run deployment without any hiccups, this methodology helped with better understanding of the pipelines process and requirements during the project lifetime
 
-Automated testing through python proved somewhat tricky with the Heroku setup projecting failures on manually tested and passed features
+Automated testing through python proved somewhat tricky with the Heroku setup projecting failures on manually tested and passed features, such as note access control working correctly, barring the tester from providing information without extensive coding input
 
 
 https://jigsaw.w3.org - all CSS passed, no errors
 https://validator.w3.org/ - all HTML passed, no errors
+
+Lighthouse and responsiveness tests 
+![Lighthouse](https://github.com/user-attachments/assets/7deb507e-06b5-42de-b35d-6569613768f2)
+![Lighthouse 2](https://github.com/user-attachments/assets/067a0ff5-bd81-4543-8c08-d41bf1cad1f6)
+
 
 Future Features and Changes
 ----
@@ -119,6 +126,7 @@ Heroku Deployment Documentation
 Bootstrap Documentation
 
 StackOverflow
+
 
 
 
