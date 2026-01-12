@@ -10,6 +10,7 @@ The system has been kept simplistic and minimal to help the projects intended pu
 
 ![Main page](https://github.com/user-attachments/assets/df268d8b-8f7d-4114-8957-0aeaf0898403)
 
+Live Link - https://noteknight-1e2cee381e80.herokuapp.com/
 
 Planning
 ----
@@ -139,5 +140,6 @@ There is no delete responsiveness as the message kept getting wiped on a redirec
 There is also some legacy code to o with admin creation that breaks the app when I try to delete it. I am aware it is there and no longer used
 
 Also there is no limit cap to the notes, not visually breaking just a noteable oversight
+
 
 
