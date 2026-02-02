@@ -65,9 +65,9 @@ Security features, including Django’s built-in authentication, safe redirect p
 
 Agile
 ----
-https://github.com/users/RaunTheIronshod/projects/10
+https://github.com/users/BerrenStonechild/s/10
 
-Github projects was use for our agile methodology. We used user stories with the as a, I can, so that format mainly defining our CRUD functionality for note handling and user registration
+Github s was use for our agile methodology. We used user stories with the as a, I can, so that format mainly defining our CRUD functionality for note handling and user registration
 
 Libraries and Frameworks
 ----
@@ -140,6 +140,7 @@ There is no delete responsiveness as the message kept getting wiped on a redirec
 There is also some legacy code to o with admin creation that breaks the app when I try to delete it. I am aware it is there and no longer used
 
 Also there is no limit cap to the notes, not visually breaking just a noteable oversight
+
 
 
 
